@@ -6,7 +6,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 svrIP = '10.10.21.121'
 
 # 포트 번호 입력
-port = 2502  # 기본 포트
+port = 2502
 
 sock.connect((svrIP, port))
 print('Connected to ' + svrIP)
@@ -18,7 +18,7 @@ while True:
     try:
         r_msg = sock.recv(2014)
         print(r_msg.decode())
-    except socket.timeout:  # 타입아웃 동안 데이터가 수신되지 않으면 예외발생
+    except socket.timeout:  # 타임아웃 동안 데이터가 수신되지 않으면 예외발생
         pass
 
     msg = input('Sending message: ')

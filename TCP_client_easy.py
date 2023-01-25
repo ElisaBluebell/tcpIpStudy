@@ -4,7 +4,7 @@
 import socket
 
 # TCP 소켓 생성과 연결
-sock = socket.create_connection(('localhost', 2500))
+sock = socket.create_connection(('10.10.21.121', 2500))
 
 # 메시지 전송
 message = "클라이언트 메시지"

@@ -4,7 +4,7 @@
 import socket
 
 port = 2500
-address = ("10.10.21.122", port)
+address = ("10.10.21.121", port)
 BUFSIZE = 1024
 
 # TCP 소켓을 생성하여 서버와 연결

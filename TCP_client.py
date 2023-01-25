@@ -19,7 +19,7 @@ else:
     port = int(port)
 
 sock.connect((svrIP, port))
-print('Connected to' + svrIP)
+print('Connected to ' + svrIP)
 
 while True:
     msg = input('Sending message: ')
