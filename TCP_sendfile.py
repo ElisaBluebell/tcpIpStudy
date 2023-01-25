@@ -17,7 +17,7 @@ print('Connected from', addr)
 msg = c_sock.recv(1024)  # 클라이언트로부터 준비 완료 수신
 print(msg.decode())
 filename = input('File name to send(c:/test/sample.bin):')  # '\' 대신 '/' 사용하여 경로 구분
-print(f"Sending '{filename}")
+print(f"Sending '{filename}'")
 fn = filename.split('/')  # 파일 경로 중 파일 이름만 추출
 
 c_sock.sendall(fn[-1].encode())  # 파일 이름 전송
