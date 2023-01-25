@@ -1,6 +1,6 @@
 import socket
 
-# 숫자에 대한 영어 사진
+# 이름과 학번
 table = {'홍길동': 20150001, '심순애': 20150002, '박문수': 20150003}
 
 s = socket.socket()  # AF_INET, SOCK_STREAM
@@ -17,5 +17,6 @@ while True:
     except:
         c_socket.send('이름이 없습니다.'.encode())  # 오류가 있을 때
     else:
+        # int 자료형은 전송시 오류가 발생하므로 str로 자료형을 변경
         c_socket.send(str(resp).encode())  # 변환 값을 전송
 
