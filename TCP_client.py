@@ -35,4 +35,15 @@ while True:
         print('연결이 종료되었습니다.')
         break
 
+    try: # 데이터 읽기
+        msg = sock.recv(1024)
+        if not msg:
+            print("연결이 종료되었습니다.")
+            break
+        print(f'Received message: {msg.decode()}')
+
+    except:  # 연결이 종료됨
+        print("연결이 종료되었습니다.")
+        break
+
 sock.close()
