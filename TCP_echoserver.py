@@ -6,7 +6,7 @@ port = 2500
 BUFSIZE = 1024
 
 sock = socket(AF_INET, SOCK_STREAM)
-sock.bind(('', port))
+sock.bind(('10.10.21.121', port))
 sock.listen(5)  # 최대 대기 클라이언트 수
 print("Waiting for clients...")
 

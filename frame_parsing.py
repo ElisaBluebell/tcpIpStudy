@@ -6,7 +6,7 @@ SIZE = 5  # 페이로드 크기
 sock = socket.socket()  # TCP 소켓
 sock.setblocking(True)  # 블록킹 모드
 sock.settimeout(0.1)  # 타임아웃=0.1
-sock.connect(('localhost', 2500))  # 서버 연결
+sock.connect(('10.10.21.121', 2500))  # 서버 연결
 
 # header 구성
 header = {"START": 0x05, "ADDR": 1, "NO": 1, "LENGTH": SIZE}
@@ -18,7 +18,7 @@ print("전송 메시지: ", msg)
 
 for i in range(0, len(msg), SIZE):
     start = i
-    frame_seq += capsule.frame(header["START"], header["ADDR"], header["nO"], msg[start:start + SIZE])
+    frame_seq += capsule.frame(header["START"], header["ADDR"], header["NO"], msg[start:start + SIZE])
     start += SIZE
     header["NO"] += 1
 
