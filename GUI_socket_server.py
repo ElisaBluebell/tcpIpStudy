@@ -30,4 +30,3 @@ while True:
     conn.send(data.encode())  # 화씨온도 전송
 
 conn.close()
-
