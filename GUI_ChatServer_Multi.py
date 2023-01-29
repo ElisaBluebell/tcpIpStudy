@@ -8,7 +8,6 @@ class MultiChatServer:
 
     # 소켓을 생성하고 연결되면 accept_client() 호출
     def __init__(self):
-        self.receive_messages = None
         self.clients = []  # 접속된 클라이언트 소켓 목록
         self.final_received_message = ""  # 최종 수신 메시지
         self.s_sock = socket(AF_INET, SOCK_STREAM)
