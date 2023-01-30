@@ -29,7 +29,7 @@ while True:
         continue
 
     try:  # 데이터 전송
-        sock.send(msg.encode())  # 메시지 전송
+        sock.send(f'{msg.encode()}')  # 메시지 전송
         random.randint(1, 3)
 
 
