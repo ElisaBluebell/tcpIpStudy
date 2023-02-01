@@ -3,18 +3,19 @@
 # 지정하지 않으면 '127.0.0.1'과 2500 사용
 import random
 import socket
+import json
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # 서버 주소 입력
-svrIP = input(("Server IP(default: 127.0.0.1): "))
+svrIP = input(("Server IP(default: 10.10.21.121): "))
 if svrIP == '':
-    svrIP = '127.0.0.1'  # 기본 주소
+    svrIP = '10.10.21.121'  # 기본 주소
 
 # 포트 번호 입력
-port = input('port(default: 2500): ')
+port = input('port(default: 9000): ')
 if port == '':
-    port = 2500  # 기본 포트
+    port = 9000  # 기본 포트
 else:
     port = int(port)
 
@@ -29,9 +30,7 @@ while True:
         continue
 
     try:  # 데이터 전송
-        sock.send(f'{msg.encode()}')  # 메시지 전송
-        random.randint(1, 3)
-
+        sock.send(f'{socket.gethostbyname(socket.gethostname())}: {msg}'.encode())  # 메시지 전송
 
     except:  # 연결이 종료됨
         print('연결이 종료되었습니다.')

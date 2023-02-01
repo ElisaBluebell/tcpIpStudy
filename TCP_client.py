@@ -7,14 +7,14 @@ import socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # 서버 주소 입력
-svrIP = input(("Server IP(default: 127.0.0.1): "))
+svrIP = input(("Server IP(default: 10.10.21.121): "))
 if svrIP == '':
-    svrIP = '127.0.0.1'  # 기본 주소
+    svrIP = '10.10.21.121'  # 기본 주소
 
 # 포트 번호 입력
-port = input('port(default: 2500): ')
+port = input('port(default: 9000): ')
 if port == '':
-    port = 2500  # 기본 포트
+    port = 9000  # 기본 포트
 else:
     port = int(port)
 
